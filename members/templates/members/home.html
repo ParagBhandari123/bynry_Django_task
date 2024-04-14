@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        /* Global styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            text-align: center;
+        }
+
+        /* Navbar styles */
+        .navbar {
+            background-color: #4CAF50;
+            overflow: hidden;
+        }
+
+        .navbar a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        /* Button styles */
+        .button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            transition: 0.3s;
+            outline: none;
+        }
+
+        .button:hover {
+            background-color: #45a049;
+        }
+
+        /* Animation for button hover */
+        .button:hover {
+            transform: scale(1.1);
+        }
+
+        /* Icon styles */
+        .icon-container {
+            margin-top: 20px;
+        }
+
+        .icon {
+            width: 200px;
+            height: 200px;
+            background-color: white;
+            border-radius: 20%;
+            margin: 10px;
+            box-shadow: 15px 15px 15px 15px rgba(8, 133, 52, 0.2);
+            transition: 0.3s;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .icon img {
+            width: 100px; /* Adjust size as needed */
+            height: 100px; /* Adjust size as needed */
+        }
+
+        .icon-text {
+            font-size: 20px;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-style: oblique;
+            font-weight: 700;
+            
+            padding-top: 10px; /* Adjust spacing as needed */
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <a href="#">paraGas Company</a>
+        <a href="#">Services</a>
+        <a href="#">About</a>
+        <a href="#">Explore</a>
+        <a href="#">Reviews</a>
+        <a href="/detailsform">Account Details</a>
+    </div>
+
+    <h1>DJANGO APPLICATION ASSIGNMENT DEMO</h1>
+
+    
+    <form action="{% url 'check' %}" method="GET">
+        <button class="button" type="submit">Check Profile Info</button>
+    </form>
+
+
+    <!-- Icon buttons -->
+    <div class="icon-container">
+        <a href="{% url 'maker' %}">
+            <div class="icon">
+                <img src="https://www.kindpng.com/picc/m/87-872767_make-a-request-icon-hd-png-download.png" alt="Place Request Icon">
+                <div class="icon-text">Place Request</div>
+            </div>
+        </a>
+        <a href="{% url 'track_request' %}">
+            <div class="icon">
+                <img src="https://cdn-icons-png.flaticon.com/128/3428/3428940.png" alt="Track Request Icon">
+                <div class="icon-text">Track Request</div>
+            </div>
+        </a>
+        <a href="{% url 'manage_request' %}">
+            <div class="icon">
+                <img src="https://static.thenounproject.com/png/1219338-200.png" alt="Manage Request Icon">
+                <div class="icon-text">Customer support</div>
+            </div>
+        </a>
+        
+    </div>
+</body>
+</html>

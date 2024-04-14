@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Information</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        .profile-image {
+            margin-top: 20px;
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border: 5px solid #4CAF50;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .profile-details {
+            margin-top: 20px;
+        }
+
+        .profile-details p {
+            margin: 5px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .profile-details a {
+            display: block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #4CAF50;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <!-- Circular profile image -->
+    <img class="profile-image" src="{% if attachment_url %}{{ attachment_url }}{% else %}https://via.placeholder.com/150{% endif %}" alt="Profile Image">
+    
+    <!-- Profile details -->
+    <div class="profile-details">
+        <h1>Account Information</h1>
+        <p>ID Number: {{ id_number }}</p>
+        <p>Name: {{ name }}</p>
+        <p>Address: {{ address }}</p>
+        <p>Contact Number: {{ contactnum }}</p>
+        
+        <!-- Button to go back to the home page -->
+        <a href="{% url 'home' %}">Go Back to Home</a>
+    </div>
+</body>
+</html>

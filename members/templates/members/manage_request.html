@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Requests</title>
+    <style>
+        /* Add your CSS styles here */
+        /* Example styles */
+        body {
+            font-family: Arial, sans-serif;
+        }
+        form {
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color:lightgrey;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .track{
+            max-width: 400px;
+            margin:10px;
+            padding: 10px;
+            background-color: #f2f2f2;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            transition: border-color 0.3s;
+        }
+        input[type="text"]:focus {
+            border-color: #4CAF50;
+        }
+        button {
+            background-color: #4CAF50 ;
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .too {
+            text-align: center;
+        }
+        .button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            margin-top: 100px;
+
+        }
+    
+    </style>
+</head>
+<body>
+    <h1 class="too">Manage Requests</h1>
+    <form method="post" enctype="multipart/form-data">
+        <!-- CSRF token -->
+        {% csrf_token %}
+        <label for="id_number">Enter ID Number:</label>
+        <input type="text" id="id_number" name="id_number" required>
+        <label for="name">Enter Your Name:</label>
+        <input type="text" id="name" name="name" required>
+        <button type="submit">Delete Request</button>
+    </form>
+    <!-- Button to navigate to track requests -->
+    <form action="{% url 'track_request' %}" method="get" id="track">
+        <button type="submit">Track Requests</button>
+    </form>
+    <!-- Go Back to Home button -->
+    
+        <a href="{% url 'home' %}" class="button">Go Back to Home</a>
+    
+</body>
+</html>
